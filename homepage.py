@@ -119,5 +119,8 @@ if page == "home":
     video = database_interaction.retrieve_file_from_firebase("db/videos/crazy_frog.mp4")
     st.video(video)
 
+    # database_interaction.upload_file_to_firebase("videos/happy_cat.mp4", "db/videos/happy_cat.mp4");
+
+
 elif page == "showcase_corner":
     showcase_corner_visitor.main()
