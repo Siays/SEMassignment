@@ -1,10 +1,13 @@
 
-from firebase_admin import storage
+from firebase_admin import storage,firestore
 import fb_admin_sdk
 
 # Access the Firebase Admin SDK (using get_firebase_app)
 app = fb_admin_sdk.get_firebase_app()
 bucket = storage.bucket(app=app)
+
+# Initialize Firestore
+db = firestore.client()
 
 def upload_file_to_firebase(item_file_path, db_file_path):
     #item_file_path : item to be sotred
@@ -87,3 +90,26 @@ def delete_file_from_firebase(db_file_path):
         blob.delete()
     except Exception as e:
         print(f"Error deleting file: {e}")
+
+
+# Fetching all documents from a Firestore collection
+def fetch_all_data_from_collection(collection_name):
+    try:
+        collection_ref = db.collection(collection_name)
+        docs = collection_ref.stream()
+
+        return docs
+
+    except Exception as e:
+        print(f"Error fetching data: {e}")
+
+# Fetching a single document by ID from a collection
+def fetch_single_document(collection_name, document_id):
+    try:
+        doc_ref = db.collection(collection_name).document(document_id)
+        doc = doc_ref.get()
+
+        return doc
+
+    except Exception as e:
+        print(f"Error fetching data: {e}")
