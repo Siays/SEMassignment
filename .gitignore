@@ -73,7 +73,9 @@ fb_admin_sdk.py
 fb_client_sdk.py
 videos/crazy_frog.mp4
 videos/happy_cat.mp4
+PrivateKey.json
 uploaded_videos/
 
 #ide configuration files
 .idea/
+
