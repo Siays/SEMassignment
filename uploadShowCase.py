@@ -2,7 +2,8 @@ import streamlit as st
 import os
 import database_interaction
 
-def main():
+
+def uploadPage():
     # Directory where uploaded videos will be stored
     UPLOAD_DIR = "uploaded_videos"
 
@@ -22,6 +23,9 @@ def main():
     # Button to save the uploaded video
     if st.button("Upload Video"):
         if uploaded_video is not None:
+            # delete the old video
+            database_interaction.delete_file_from_firebase("db/videos/showCase.mp4")
+
             # Save the uploaded video
             video_path = os.path.join(UPLOAD_DIR, uploaded_video.name)
             database_interaction.upload_file_to_firebase(video_path, "db/videos/showCase.mp4")
@@ -42,5 +46,5 @@ def main():
     else:
         st.write("No videos uploaded yet.")
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()
