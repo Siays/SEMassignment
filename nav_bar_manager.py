@@ -46,6 +46,7 @@ def render_nav_bar():
                 <a href="#">Facilities</a>
                 <a href="#">Contact Us</a>
                 <a href="?page=showcase_corner">Showcase Corner</a>
+                <a href="?page=subsribe_openDay">Open Day Information</a>
             </div>
             """,
             unsafe_allow_html=True

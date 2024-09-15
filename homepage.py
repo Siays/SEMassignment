@@ -2,6 +2,7 @@ import streamlit as st
 import nav_bar_manager
 import showcase_corner_visitor
 import database_interaction
+import subsribe_open_day
 
 # Set page configuration
 st.set_page_config(layout="wide", page_title="FOCS_website", page_icon=":mortar_board:")
@@ -124,3 +125,6 @@ if page == "home":
 
 elif page == "showcase_corner":
     showcase_corner_visitor.main()
+
+elif page == "subsribe_openDay":
+    subsribe_open_day.main()
