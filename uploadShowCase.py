@@ -46,5 +46,3 @@ def uploadPage():
     else:
         st.write("No videos uploaded yet.")
 
-# if __name__ == "__main__":
-#     main()
