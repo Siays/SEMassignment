@@ -67,6 +67,6 @@ def adminPage():
             """,
             unsafe_allow_html=True
         )
-
+        st.image("images/adminhome.png", use_column_width=True)
     elif page == "uploadShowCase":
         uploadShowCase.uploadPage()
