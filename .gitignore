@@ -68,6 +68,7 @@ node_modules/
 # dataconnect generated files
 .dataconnect
 
+myPrivateKey.json
 jiajiePrivateKey.json
 fb_admin_sdk.py
 fb_client_sdk.py
