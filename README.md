@@ -16,3 +16,9 @@ before this make sure accepted my invitation
 remember to add yourPrivateKey.json (can be named whatever you want) to .gitignore
 
 btw, my database tested only to store/retrieve images and videos, if you guys need any other usage may need to explore yourself.
+
+****
+# Notes:
+- Change to light theme once you enter the home page
+- Refresh the page if there is any error
+- Clear all the cookies first if you want the admin login page to appear again
