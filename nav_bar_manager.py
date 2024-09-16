@@ -15,7 +15,7 @@ def render_nav_bar():
 
         .nav-menu {
             display: flex;
-            gap: 50px;
+            gap: 30px;
         }
 
         .nav-menu a {
@@ -34,7 +34,7 @@ def render_nav_bar():
     col1, col2 = st.columns([1, 3])
 
     with col1:
-        st.image("images/nav_bar_logo.png", width=137)
+        st.image("images/nav_bar_logo.png", width=200)
 
     with col2:
         st.markdown(
@@ -47,6 +47,7 @@ def render_nav_bar():
                 <a href="#">Contact Us</a>
                 <a href="?page=showcase_corner">Showcase Corner</a>
                 <a href="?page=subsribe_openDay">Open Day Information</a>
+                <a href="?page=chatbot">FAQ Chatbot</a>
             </div>
             """,
             unsafe_allow_html=True
