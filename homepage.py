@@ -3,6 +3,7 @@ import nav_bar_manager
 import showcase_corner_visitor
 import database_interaction
 import subsribe_open_day
+import chatbot
 
 # Set page configuration
 st.set_page_config(layout="wide", page_title="FOCS_website", page_icon=":mortar_board:")
@@ -122,9 +123,11 @@ if page == "home":
 
     # database_interaction.upload_file_to_firebase("videos/happy_cat.mp4", "db/videos/happy_cat.mp4");
 
-
 elif page == "showcase_corner":
     showcase_corner_visitor.main()
 
 elif page == "subsribe_openDay":
     subsribe_open_day.main()
+
+elif page == "chatbot":
+    chatbot.main()
