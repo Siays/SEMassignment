@@ -113,3 +113,41 @@ def fetch_single_document(collection_name, document_id):
 
     except Exception as e:
         print(f"Error fetching data: {e}")
+
+# Fetch all batches from Firestore
+def fetch_batches_from_firestore():
+    try:
+        batches_ref = db.collection('batches')
+        docs = batches_ref.stream()
+        return [doc.get('batch_name') for doc in docs]
+    except Exception as e:
+        print(f"Error fetching batches: {e}")
+        return None
+
+# Fetch all courses from Firestore
+def fetch_courses_from_firestore():
+    try:
+        courses_ref = db.collection('courses')
+        docs = courses_ref.stream()
+        return [doc.get('course_name') for doc in docs]
+    except Exception as e:
+        print(f"Error fetching courses: {e}")
+        return None
+
+# Insert a record into Firestore (for both batches and courses)
+def insert_record_into_firestore(collection_name, data):
+    try:
+        db.collection(collection_name).add(data)
+        print(f"Record added to {collection_name} collection.")
+    except Exception as e:
+        print(f"Error adding record to {collection_name}: {e}")
+
+# Delete a record from Firestore (for both batches and courses)
+def delete_record_from_firestore(collection_name, name):
+    try:
+        docs = db.collection(collection_name).where('batch_name' if collection_name == 'batches' else 'course_name', '==', name).stream()
+        for doc in docs:
+            db.collection(collection_name).document(doc.id).delete()
+            print(f"Record '{name}' deleted from {collection_name} collection.")
+    except Exception as e:
+        print(f"Error deleting record from {collection_name}: {e}")

@@ -1,5 +1,6 @@
 import streamlit as st
 import uploadShowCase
+import updateOpenDay
 
 
 # Function to render the admin navigation bar
@@ -40,6 +41,7 @@ def render_nav_bar_admin():
             <div class="nav-menu">
                 <a href="?page=home">Home</a>
                 <a href="?page=uploadShowCase">Upload ShowCase</a>
+                <a href="?page=openDayInfo">Update Open Day Info</a>
             </div>
             """,
             unsafe_allow_html=True
@@ -70,3 +72,5 @@ def adminPage():
         st.image("images/adminhome.png", use_column_width=True)
     elif page == "uploadShowCase":
         uploadShowCase.uploadPage()
+    elif page == "openDayInfo":
+        updateOpenDay.updateInfo()
