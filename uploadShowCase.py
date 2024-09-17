@@ -12,13 +12,10 @@ def uploadPage():
         os.makedirs(UPLOAD_DIR)
 
     # Admin Page Title
-    st.title("Admin - Upload Video for Showcase Corner")
+    st.title("Upload Video for Showcase Corner")
 
     # File uploader widget
     uploaded_video = st.file_uploader("Upload a Video", type=["mp4", "avi", "mov"])
-
-    # Description input for the video (optional)
-    video_description = st.text_input("Enter a brief description for the video (optional)")
 
     # Button to save the uploaded video
     if st.button("Upload Video"):
