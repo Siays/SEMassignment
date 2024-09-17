@@ -118,8 +118,8 @@ if page == "home":
     )
 
     st.image("images/body_img.jpg", use_column_width=True)
-    video = database_interaction.retrieve_file_from_firebase("db/videos/crazy_frog.mp4")
-    st.video(video)
+    # video = database_interaction.retrieve_file_from_firebase("db/videos/crazy_frog.mp4")
+    # st.video(video)
 
     # database_interaction.upload_file_to_firebase("videos/happy_cat.mp4", "db/videos/happy_cat.mp4");
 
