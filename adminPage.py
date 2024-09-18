@@ -40,7 +40,7 @@ def render_nav_bar_admin():
             """
             <div class="nav-menu">
                 <a href="?page=home">Home</a>
-                <a href="?page=uploadShowCase">Upload ShowCase</a>
+                <a href="?page=uploadShowCase">Upload ShowCase Video</a>
                 <a href="?page=openDayInfo">Update Open Day Info</a>
             </div>
             """,
