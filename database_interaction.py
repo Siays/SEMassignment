@@ -24,8 +24,10 @@ def upload_file_to_firebase(item_file_path, db_file_path):
     # Upload a file to Firebase Storage
     blob = bucket.blob(db_file_path)
     if blob.exists():
-        print(f"Error: File '{db_file_path}' already exists in Firebase Storage.")
-        return
+        # print(f"Error: File '{db_file_path}' already exists in Firebase Storage.")
+        print(f"File '{db_file_path}' that exists in Firebase Storage will be delete.")
+        delete_file_from_firebase(db_file_path)
+        # return
 
     try:
         blob.upload_from_filename(item_file_path)

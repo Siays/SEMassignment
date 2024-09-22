@@ -21,7 +21,7 @@ def uploadPage():
     if st.button("Upload Video"):
         if uploaded_video is not None:
             # delete the old video
-            database_interaction.delete_file_from_firebase("db/videos/showCase.mp4")
+            # database_interaction.delete_file_from_firebase("db/videos/showCase.mp4")
 
             # save the file to local directory
             video_path = os.path.join(UPLOAD_DIR, uploaded_video.name)
