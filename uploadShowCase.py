@@ -23,12 +23,13 @@ def uploadPage():
             # delete the old video
             # database_interaction.delete_file_from_firebase("db/videos/showCase.mp4")
 
-            # Save the uploaded video
+            # save the file to local directory
             video_path = os.path.join(UPLOAD_DIR, uploaded_video.name)
-            database_interaction.upload_file_to_firebase(video_path, "db/videos/showCase.mp4")
-
             with open(video_path, "wb") as f:
                 f.write(uploaded_video.getbuffer())
+
+            # Save the uploaded video
+            database_interaction.upload_file_to_firebase(video_path, "db/videos/showCase.mp4")
 
             st.success(f"Video '{uploaded_video.name}' has been successfully uploaded!")
         else:

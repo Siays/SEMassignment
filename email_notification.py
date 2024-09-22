@@ -4,8 +4,8 @@ from email.mime.text import MIMEText
 from email.utils import formataddr
 
 # Replace these with your Gmail credentials
-GMAIL_USER = 'johnloser44@gmail.com'
-GMAIL_PASSWORD = 'pass897bcv.'
+GMAIL_USER = 'khokj-wm21@student.tarc.edu.my'
+GMAIL_PASSWORD = 'Tarumt12345!'
 
 def send_email(recipient, subject, body):
     # Create the email
